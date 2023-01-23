@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "org.grpc_project.email";
+
+service email {
+  rpc registerEmail(emailMessage) returns (EmailAPIResponse);
+}
+
+message emailMessage{
+  string email = 1;
+  string name = 2;
+  string subject=3;
+  string message=4;
+}
+message EmailAPIResponse{
+  string responseMessage = 1;
+  int32 responseCode = 2;
+}
